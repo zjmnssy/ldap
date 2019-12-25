@@ -1,0 +1,8 @@
+github.com/go-asn1-ber/asn1-ber v1.3.1 h1:gvPdv/Hr++TRFCl0UbPFHC54P9N9jgsRPnmnr419Uck=
+github.com/go-asn1-ber/asn1-ber v1.3.1/go.mod h1:hEBeB/ic+5LoWskz+yKT7vGhhPYkProFKoKdwZRWMe0=
+github.com/go-ldap/ldap v0.0.0-20191214221535-a4f79d8a7cda h1:O5/P5iaVhgWgc7s333Yg6QOikOQuDXaXjz9QyE0dZEE=
+github.com/go-ldap/ldap v0.0.0-20191214221535-a4f79d8a7cda/go.mod h1:DgaeGoCRCn0o1hYOoTAy5Ufhya4dqTYxtNq4ebHGxL4=
+github.com/go-ldap/ldap v3.0.3+incompatible h1:HTeSZO8hWMS1Rgb2Ziku6b8a7qRIZZMHjsvuZyatzwk=
+github.com/go-ldap/ldap v3.0.3+incompatible/go.mod h1:qfd9rJvER9Q0/D/Sqn1DfHRoBp40uXYvFoEVrNEPqRc=
+github.com/zjmnssy/zlog v1.0.0 h1:RMatwnVtvHXQgjNR2gQoy9Zp2C3/BIwaTzRGWmxVzLM=
+github.com/zjmnssy/zlog v1.0.0/go.mod h1:higxJqW93DoOA3DnY94S3y7+CJ2aSKJkY2GXB23v0YA=

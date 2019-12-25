@@ -6,18 +6,17 @@ import (
 	"github.com/go-ldap/ldap"
 )
 
-const (
-	defaultSearchPageSize = 256
-)
+// DefaultSearchPageSize 查询数据默认页大小.
+var DefaultSearchPageSize uint32
 
 // Query 分页查询AD用户列表信息.
-func Query(c *ldap.Conn, domain string, filter string, attributeList []string) (*ldap.SearchResult, error) {
+func Query(c *ldap.Conn, searchbase string, filter string, attributeList []string) (*ldap.SearchResult, error) {
 	if c == nil {
 		return nil, fmt.Errorf("connection is nil")
 	}
 
 	searchRequest := ldap.NewSearchRequest(
-		domain,
+		searchbase,
 		ldap.ScopeWholeSubtree,
 		ldap.NeverDerefAliases,
 		0,
@@ -28,7 +27,7 @@ func Query(c *ldap.Conn, domain string, filter string, attributeList []string) (
 		nil,
 	)
 
-	sr, err := c.SearchWithPaging(searchRequest, defaultSearchPageSize)
+	sr, err := c.SearchWithPaging(searchRequest, DefaultSearchPageSize)
 	if err != nil {
 		return nil, err
 	}

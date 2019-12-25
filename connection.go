@@ -4,13 +4,11 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/zjmnssy/zlog"
-
 	"github.com/go-ldap/ldap"
 )
 
-// Connection 获取AD服务器的连接.
-func Connection(domain string, timeout time.Duration) (*ldap.Conn, error) {
+// Connect 连接AD服务器.
+func Connect(domain string, timeout time.Duration) (*ldap.Conn, error) {
 	c, err := ldap.Dial("tcp", fmt.Sprintf("%s:%d", domain, 389))
 	if err != nil {
 		return nil, err
@@ -38,7 +36,6 @@ func Login(c *ldap.Conn, account string, password string) (*ldap.Conn, error) {
 // Close 关闭连接.
 func Close(c *ldap.Conn) {
 	if c == nil {
-		zlog.Prints(zlog.Notice, "Ldap", "connection is nil")
 		return
 	}
 
@@ -46,5 +43,7 @@ func Close(c *ldap.Conn) {
 }
 
 func init() {
-	ldap.DefaultTimeout = time.Duration(1000) * time.Millisecond
+	ldap.DefaultTimeout = time.Duration(1500) * time.Millisecond
+
+	DefaultSearchPageSize = 256
 }
