@@ -18,19 +18,20 @@ func main() {
 	attributes = append(attributes, "Sn")
 	attributes = append(attributes, "Givename")
 
-	c1, err := ldap.Connect("10.10.3.65", 2000)
+	c, err := ldap.Connect("10.10.3.65", 2000)
+	defer ldap.Close(c)
 	if err != nil {
 		zlog.Prints(zlog.Warn, "example", "connect ad error : %s", err)
 		return
 	}
 
-	c2, err := ldap.Login(c1, userName, password)
+	_, err = ldap.Login(c, userName, password)
 	if err != nil {
 		zlog.Prints(zlog.Warn, "example", "login ad error : %s", err)
 		return
 	}
 
-	result, err := ldap.Query(c2, searchBase, filter, attributes)
+	result, err := ldap.Query(c, searchBase, filter, attributes)
 	if err != nil {
 		zlog.Prints(zlog.Warn, "example", "query error : %s", err)
 		return
@@ -44,4 +45,5 @@ func main() {
 		zlog.Prints(zlog.Info, "example", "Sn = %s", entry.GetAttributeValue("sn"))
 		zlog.Prints(zlog.Info, "example", "Givename = %s", entry.GetAttributeValue("givename"))
 	}
+
 }
