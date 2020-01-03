@@ -6,10 +6,10 @@ import (
 	"github.com/go-ldap/ldap"
 )
 
-// DefaultSearchPageSize 查询数据默认页大小.
+// DefaultSearchPageSize the default page size of search.
 var DefaultSearchPageSize uint32
 
-// Query 分页查询AD用户列表信息.
+// Query info from AD server.
 func Query(c *ldap.Conn, searchbase string, filter string, attributeList []string) (*ldap.SearchResult, error) {
 	if c == nil {
 		return nil, fmt.Errorf("connection is nil")

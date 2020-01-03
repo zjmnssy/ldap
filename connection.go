@@ -7,9 +7,9 @@ import (
 	"github.com/go-ldap/ldap"
 )
 
-// Connect 连接AD服务器.
+// Connect to AD or LDAP server, default port is 389.
 func Connect(domain string, timeout time.Duration) (*ldap.Conn, error) {
-	c, err := ldap.Dial("tcp", fmt.Sprintf("%s:%d", domain, 389))
+	c, err := ldap.Dial("tcp", domain)
 	if err != nil {
 		return nil, err
 	}
@@ -19,7 +19,7 @@ func Connect(domain string, timeout time.Duration) (*ldap.Conn, error) {
 	return c, nil
 }
 
-// Login 登录AD域.
+// Login AD or LDAP server.
 func Login(c *ldap.Conn, account string, password string) (*ldap.Conn, error) {
 	if c == nil {
 		return nil, fmt.Errorf("connection is nil")
@@ -33,7 +33,7 @@ func Login(c *ldap.Conn, account string, password string) (*ldap.Conn, error) {
 	return c, nil
 }
 
-// Close 关闭连接.
+// Close connection.
 func Close(c *ldap.Conn) {
 	if c == nil {
 		return

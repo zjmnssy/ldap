@@ -18,7 +18,7 @@ func main() {
 	attributes = append(attributes, "Sn")
 	attributes = append(attributes, "Givename")
 
-	c, err := ldap.Connect("10.10.3.65", 2000)
+	c, err := ldap.Connect("10.10.3.65:389", 2000)
 	defer ldap.Close(c)
 	if err != nil {
 		zlog.Prints(zlog.Warn, "example", "connect ad error : %s", err)
