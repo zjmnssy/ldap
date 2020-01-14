@@ -6,9 +6,9 @@ import (
 )
 
 func main() {
-	searchBase := "ou=数篷科技,dc=datacloak3,dc=com"
-	userName := "test01@datacloak3.com"
-	password := "start@2018"
+	searchBase := "ou=xx科技,dc=example,dc=com"
+	userName := "test@example.com"
+	password := "123456"
 	filter := "(&(SamAccountName=*))"
 	attributes := make([]string, 0)
 	attributes = append(attributes, "SamAccountName")
