@@ -6,3 +6,5 @@ github.com/go-ldap/ldap v3.0.3+incompatible h1:HTeSZO8hWMS1Rgb2Ziku6b8a7qRIZZMHj
 github.com/go-ldap/ldap v3.0.3+incompatible/go.mod h1:qfd9rJvER9Q0/D/Sqn1DfHRoBp40uXYvFoEVrNEPqRc=
 github.com/zjmnssy/zlog v1.0.0 h1:RMatwnVtvHXQgjNR2gQoy9Zp2C3/BIwaTzRGWmxVzLM=
 github.com/zjmnssy/zlog v1.0.0/go.mod h1:higxJqW93DoOA3DnY94S3y7+CJ2aSKJkY2GXB23v0YA=
+github.com/zjmnssy/zlog v1.0.2 h1:kzbrrWrudvU/ZjXnyNAocBuxPwdBnt63QhxxhOiBtb0=
+github.com/zjmnssy/zlog v1.0.2/go.mod h1:higxJqW93DoOA3DnY94S3y7+CJ2aSKJkY2GXB23v0YA=
