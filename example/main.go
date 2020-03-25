@@ -21,19 +21,19 @@ func main() {
 	c, err := ldap.Connect("10.10.3.65:389", 2000)
 	defer ldap.Close(c)
 	if err != nil {
-		zlog.Prints(zlog.Warn, "example", "connect ad error : %s", err)
+		zlog.Prints(zlog.Warn, "example", "connect ad error = %s", err)
 		return
 	}
 
 	_, err = ldap.Login(c, userName, password)
 	if err != nil {
-		zlog.Prints(zlog.Warn, "example", "login ad error : %s", err)
+		zlog.Prints(zlog.Warn, "example", "login ad error = %s", err)
 		return
 	}
 
 	result, err := ldap.Query(c, searchBase, filter, attributes)
 	if err != nil {
-		zlog.Prints(zlog.Warn, "example", "query error : %s", err)
+		zlog.Prints(zlog.Warn, "example", "query error = %s", err)
 		return
 	}
 
